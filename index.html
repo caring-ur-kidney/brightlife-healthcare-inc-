@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bright Life Dialysis Center</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f8fdff;
+      color:#222;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+    header{
+      width:100%;
+      background:white;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .navbar{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#0097a7;
+    }
+
+    .logo span{
+      color:#00bcd4;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#333;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#00acc1;
+    }
+
+    /* HERO SECTION */
+    .hero{
+      width:100%;
+      height:100vh;
+      background:
+      linear-gradient(rgba(0, 121, 140, 0.55), rgba(0, 150, 136, 0.55)),
+      url('https://images.unsplash.com/photo-1580281657527-47f249e8f4df?auto=format&fit=crop&w=1400&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero-content{
+      max-width:800px;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+      line-height:1.1;
+    }
+
+    .hero p{
+      font-size:20px;
+      margin-bottom:35px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:white;
+      color:#0097a7;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .hero-btn:hover{
+      background:#00bcd4;
+      color:white;
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+    section{
+      padding:90px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#00838f;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+    }
+
+    /* ABOUT */
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .about-text h3{
+      font-size:32px;
+      color:#00838f;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      margin-bottom:15px;
+      color:#555;
+    }
+
+    /* SERVICES */
+    .services{
+      background:#eefbfd;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .service-card{
+      background:white;
+      padding:35px 25px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.4s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .service-card img{
+      width:90px;
+      height:90px;
+      object-fit:cover;
+      border-radius:50%;
+      margin-bottom:20px;
+    }
+
+    .service-card h3{
+      margin-bottom:15px;
+      color:#0097a7;
+    }
+
+    .service-card p{
+      color:#666;
+      font-size:15px;
+    }
+
+    /* WHY CHOOSE US */
+    .why{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .why-box{
+      background:white;
+      border-left:5px solid #00acc1;
+      padding:30px;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .why-box h4{
+      margin-bottom:10px;
+      color:#00838f;
+    }
+
+    /* CONTACT */
+    .contact{
+      background:linear-gradient(to right,#0097a7,#00bcd4);
+      color:white;
+      border-radius:25px;
+      text-align:center;
+      padding:70px 30px;
+    }
+
+    .contact h2{
+      font-size:40px;
+      margin-bottom:15px;
+    }
+
+    .contact p{
+      margin-bottom:12px;
+      font-size:18px;
+    }
+
+    .contact a{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 30px;
+      background:white;
+      color:#0097a7;
+      text-decoration:none;
+      border-radius:50px;
+      font-weight:600;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#003c46;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:50px;
+    }
+
+    /* MOBILE */
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      nav ul{
+        gap:15px;
+        font-size:14px;
+      }
+
+      .section-title h2{
+        font-size:32px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">Bright <span>Life</span></div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Bright Life Dialysis Center</h1>
+      <p>
+        Compassionate Healthcare in Bulihan, Cavite.
+        Trusted Dialysis, Emergency Room, Laboratory, and Pharmacy Services.
+      </p>
+
+      <a href="#contact" class="hero-btn">Book Consultation</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="section-title">
+      <h2>About Us</h2>
+      <p>Your health is our mission</p>
+    </div>
+
+    <div class="about">
+
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80" alt="Dialysis Center">
+
+      <div class="about-text">
+        <h3>Newly Open Healthcare Facility in Bulihan, Cavite</h3>
+
+        <p>
+          Bright Life Dialysis Center provides modern and compassionate healthcare services
+          focused on patient comfort, safety, and recovery.
+        </p>
+
+        <p>
+          Our professional medical team is committed to delivering quality dialysis care,
+          fast emergency response, accurate laboratory testing, and accessible pharmacy services.
+        </p>
+
+        <p>
+          We aim to become one of Cavite’s most trusted healthcare providers by serving
+          every patient with excellence and compassion.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Complete healthcare solutions for your family</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=500&q=80" alt="Dialysis">
+        <h3>Dialysis</h3>
+        <p>
+          Safe and advanced dialysis treatment with modern equipment and caring specialists.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=500&q=80" alt="Emergency Room">
+        <h3>Emergency Room</h3>
+        <p>
+          Fast and reliable emergency medical services available for urgent healthcare needs.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=500&q=80" alt="Laboratory">
+        <h3>Laboratory</h3>
+        <p>
+          Accurate diagnostic and laboratory testing for better and faster patient care.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=500&q=80" alt="Pharmacy">
+        <h3>Pharmacy</h3>
+        <p>
+          Complete medicines and healthcare products for your daily medical needs.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+
+    <div class="section-title">
+      <h2>Why Choose Us</h2>
+      <p>Quality healthcare with compassion</p>
+    </div>
+
+    <div class="why">
+
+      <div class="why-box">
+        <h4>Experienced Medical Team</h4>
+        <p>Professional doctors, nurses, and healthcare staff dedicated to patient care.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>Modern Equipment</h4>
+        <p>Advanced medical technology for safe and accurate treatment.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>Comfortable Facility</h4>
+        <p>Clean, peaceful, and patient-friendly environment for better recovery.</p>
+      </div>
+
+      <div class="why-box">
+        <h4>Affordable Healthcare</h4>
+        <p>Accessible medical services designed to support every family in Cavite.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="contact">
+
+      <h2>Contact Us</h2>
+
+      <p><strong>Bright Life Dialysis Center</strong></p>
+      <p>Bulihan, Cavite, Philippines</p>
+      <p>📞 +63 912 345 6789</p>
+      <p>📧 brightlife@gmail.com</p>
+
+      <a href="#">Message Us Today</a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Bright Life Dialysis Center | All Rights Reserved
+    </p>
+  </footer>
+
+</body>
+</html>
