@@ -1,86 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bright Life Dialysis Center</title>
-  <meta name="description" content="Bright Life Dialysis Center offers professional dialysis, emergency room, laboratory, and pharmacy services in Cavite.">
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-      <div class="logo">
-        Bright Life <span>Dialysis Center</span>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <a href="#contact" class="btn">Book Appointment</a>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="overlay"></div>
-
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Compassionate Healthcare For A Brighter Life</h1>
-
-        <p>
-          Providing trusted dialysis, emergency room, laboratory,
-          and pharmacy services with modern healthcare technology
-          and compassionate medical professionals.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#contact" class="btn">Schedule Consultation</a>
-          <a href="#services" class="btn-secondary">Explore Services</a>
+export default function BrightLifeDialysisCenter() {
+                  className="bg-cyan-50 border border-cyan-100 rounded-2xl p-5 font-medium text-gray-700"
+                >
+                  ✓ {feature}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- FEATURES -->
-  <section class="features">
-    <div class="container features-grid">
-      <div class="feature-card">
-        <h3>24/7 Care</h3>
-        <p>Reliable healthcare support whenever you need it.</p>
-      </div>
+      {/* GALLERY */}
+      <section className="py-24 px-6 bg-slate-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-extrabold mb-4">
+              Inside Our Facility
+            </h3>
+            <p className="text-gray-600 text-lg">
+              Comfortable spaces designed for patient wellness and relaxation.
+            </p>
+          </div>
 
-      <div class="feature-card">
-        <h3>Expert Staff</h3>
-        <p>Professional and compassionate medical specialists.</p>
-      </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <img
+              src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=1200&auto=format&fit=crop"
+              alt="Facility"
+              className="rounded-3xl h-80 object-cover w-full shadow-lg"
+            />
 
-      <div class="feature-card">
-        <h3>Modern Equipment</h3>
-        <p>Advanced healthcare technology for better patient care.</p>
-      </div>
-    </div>
-  </section>
+            <img
+              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop"
+              alt="Healthcare"
+              className="rounded-3xl h-80 object-cover w-full shadow-lg"
+            />
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Medical Services</h2>
+            <img
+              src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=1200&auto=format&fit=crop"
+              alt="Medical Team"
+              className="rounded-3xl h-80 object-cover w-full shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="py-24 px-6 bg-cyan-700 text-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-5xl font-extrabold mb-6">
+            Visit Bright Life Dialysis Center Today
+          </h3>
+
+          <p className="text-cyan-100 text-lg max-w-3xl mx-auto mb-12">
+            We are ready to provide safe, compassionate, and high-quality dialysis care for patients in Bulihan, Cavite and nearby communities.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            <div className="bg-white/10 rounded-3xl p-8 backdrop-blur-lg">
+              <h4 className="text-2xl font-bold mb-4">Location</h4>
+              <p className="text-cyan-100 leading-relaxed">
+                Bulihan, Silang, Cavite<br />
+                Near Governor's Drive
+              </p>
+            </div>
+
+            <div className="bg-white/10 rounded-3xl p-8 backdrop-blur-lg">
+              <h4 className="text-2xl font-bold mb-4">Phone</h4>
+              <p className="text-cyan-100">
+                +63 912 345 6789
+              </p>
+            </div>
+
+            <div className="bg-white/10 rounded-3xl p-8 backdrop-blur-lg">
+              <h4 className="text-2xl font-bold mb-4">Email</h4>
+              <p className="text-cyan-100">
+                brightlifedialysis@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-slate-900 text-slate-400 py-8 text-center">
         <p>
-          Complete healthcare solutions designed for your comfort,
-          safety, and recovery.
-</html>
+          © 2026 Bright Life Dialysis Center • Bulihan, Cavite
+        </p>
+      </footer>
+    </div>
+  );
+}
