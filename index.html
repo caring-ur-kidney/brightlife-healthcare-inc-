@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brightlife Healthcare Inc.</title>
 
-  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -18,7 +18,7 @@
 
     body{
       background:#f5fbff;
-      color:#1d3557;
+      color:#1f2937;
       overflow-x:hidden;
     }
 
@@ -26,88 +26,48 @@
       scroll-behavior:smooth;
     }
 
-    /* NAVBAR */
-    nav{
-      width:100%;
-      position:fixed;
-      top:0;
-      left:0;
-      z-index:1000;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter:blur(10px);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 8%;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    nav h2{
-      color:#0096c7;
-      font-size:28px;
-      font-weight:700;
-    }
-
-    nav ul{
-      display:flex;
-      gap:25px;
-      list-style:none;
-    }
-
-    nav ul li a{
-      text-decoration:none;
-      color:#1d3557;
-      font-weight:500;
-      transition:0.3s;
-    }
-
-    nav ul li a:hover{
-      color:#00b4d8;
-    }
-
     /* HERO */
     .hero{
       min-height:100vh;
+      background:
+      linear-gradient(rgba(0,78,112,0.65),rgba(0,78,112,0.65)),
+      url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:120px 8% 80px;
-      background:
-        linear-gradient(rgba(0,114,143,0.75), rgba(0,114,143,0.75)),
-        url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1400&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
       color:white;
+      padding:20px;
       position:relative;
     }
 
     .hero-content{
       max-width:900px;
-      animation:fadeUp 1.2s ease;
+      animation:fadeUp 1s ease;
     }
 
     .hero h1{
-      font-size:60px;
-      line-height:1.2;
+      font-size:4rem;
+      font-weight:700;
       margin-bottom:20px;
+      line-height:1.1;
     }
 
     .hero p{
-      font-size:20px;
+      font-size:1.2rem;
       margin-bottom:35px;
-      color:#eafcff;
+      line-height:1.8;
     }
 
     .hero-buttons{
       display:flex;
-      justify-content:center;
       gap:20px;
+      justify-content:center;
       flex-wrap:wrap;
     }
 
     .btn{
-      padding:15px 32px;
+      padding:16px 34px;
       border-radius:50px;
       text-decoration:none;
       font-weight:600;
@@ -116,13 +76,13 @@
     }
 
     .btn-primary{
-      background:#00d4ff;
-      color:#003049;
+      background:#00b4d8;
+      color:white;
     }
 
     .btn-primary:hover{
-      transform:translateY(-5px);
-      background:white;
+      background:#0096c7;
+      transform:translateY(-3px);
     }
 
     .btn-secondary{
@@ -132,191 +92,250 @@
 
     .btn-secondary:hover{
       background:white;
-      color:#0077b6;
-    }
-
-    /* SECTION */
-    section{
-      padding:90px 8%;
-    }
-
-    .section-title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .section-title h2{
-      font-size:42px;
-      color:#0077b6;
-      margin-bottom:15px;
-    }
-
-    .section-title p{
-      color:#555;
-      max-width:700px;
-      margin:auto;
+      color:#004e70;
     }
 
     /* SERVICES */
     .services{
+      padding:90px 20px;
       background:white;
+      text-align:center;
     }
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
+    .section-title{
+      font-size:2.7rem;
+      color:#004e70;
+      margin-bottom:15px;
+    }
+
+    .section-subtitle{
+      color:#6b7280;
+      margin-bottom:50px;
+      font-size:1.1rem;
+    }
+
+    .slider-container{
+      max-width:1200px;
+      margin:auto;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .slides{
+      display:flex;
+      transition:0.6s ease;
     }
 
     .service-card{
-      background:#f8fdff;
+      min-width:100%;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
       border-radius:25px;
-      padding:35px 30px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:30px;
+      animation:fadeUp 0.8s ease;
+    }
+
+    .card img{
+      width:100%;
+      height:450px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:40px;
+      text-align:left;
+    }
+
+    .card-content h3{
+      font-size:2rem;
+      color:#0077b6;
+      margin-bottom:20px;
+    }
+
+    .card-content p{
+      line-height:1.9;
+      color:#4b5563;
+      margin-bottom:25px;
+    }
+
+    .card-content a{
+      display:inline-block;
+      background:#00b4d8;
+      color:white;
+      text-decoration:none;
+      padding:14px 28px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .card-content a:hover{
+      background:#0077b6;
+    }
+
+    /* ARROWS */
+    .arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:#00b4d8;
+      color:white;
+      border:none;
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      font-size:26px;
+      cursor:pointer;
+      z-index:10;
+      transition:0.3s;
+    }
+
+    .arrow:hover{
+      background:#0077b6;
+    }
+
+    .prev{
+      left:10px;
+    }
+
+    .next{
+      right:10px;
+    }
+
+    /* WHY US */
+    .why-us{
+      background:#eaf8fd;
+      padding:90px 20px;
+    }
+
+    .why-grid{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .why-card{
+      background:white;
+      padding:35px;
+      border-radius:20px;
       text-align:center;
       transition:0.4s;
-      position:relative;
-      overflow:hidden;
-      border:1px solid #dff6ff;
+      box-shadow:0 5px 15px rgba(0,0,0,0.05);
     }
 
-    .service-card::before{
-      content:'';
-      position:absolute;
-      width:100%;
-      height:5px;
-      background:linear-gradient(to right,#00b4d8,#90e0ef);
-      top:0;
-      left:0;
+    .why-card:hover{
+      transform:translateY(-10px);
     }
 
-    .service-card:hover{
-      transform:translateY(-12px);
-      box-shadow:0 20px 40px rgba(0,0,0,0.1);
-    }
-
-    .service-icon{
-      font-size:55px;
-      margin-bottom:20px;
-      animation:float 3s infinite ease-in-out;
-    }
-
-    .service-card h3{
-      margin-bottom:15px;
+    .why-card h4{
       color:#0077b6;
-      font-size:24px;
-    }
-
-    .service-card p{
-      color:#555;
-      line-height:1.7;
-    }
-
-    /* ABOUT */
-    .about{
-      background:linear-gradient(to right,#e0f7ff,#ffffff);
-    }
-
-    .about-content{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:50px;
-      align-items:center;
-    }
-
-    .about img{
-      width:100%;
-      border-radius:25px;
-      box-shadow:0 15px 35px rgba(0,0,0,0.1);
-    }
-
-    .about-text h3{
-      font-size:38px;
-      margin-bottom:20px;
-      color:#0077b6;
-    }
-
-    .about-text p{
-      line-height:1.9;
-      color:#444;
-      margin-bottom:20px;
+      margin:15px 0;
+      font-size:1.3rem;
     }
 
     /* CTA */
     .cta{
       background:
-      linear-gradient(rgba(0,119,182,0.9), rgba(0,119,182,0.9)),
-      url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1400&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
-      text-align:center;
+      linear-gradient(rgba(0,78,112,0.88),rgba(0,78,112,0.88)),
+      url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
       color:white;
-      border-radius:25px;
-      margin:80px 8%;
-      padding:80px 30px;
+      text-align:center;
+      padding:100px 20px;
     }
 
     .cta h2{
-      font-size:48px;
+      font-size:3rem;
       margin-bottom:20px;
     }
 
     .cta p{
-      max-width:700px;
+      max-width:750px;
       margin:auto;
-      margin-bottom:35px;
       line-height:1.8;
+      margin-bottom:35px;
     }
 
     /* FOOTER */
     footer{
       background:#003049;
       color:white;
-      padding:60px 8% 30px;
-      text-align:center;
+      padding:60px 20px 30px;
     }
 
-    .footer-logo{
-      font-size:30px;
-      font-weight:700;
+    .footer-content{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:40px;
+    }
+
+    .footer-logo h2{
+      color:#00d4ff;
       margin-bottom:15px;
     }
 
-    .footer-text{
-      color:#d6ecff;
-      margin-bottom:35px;
+    .footer-logo p{
+      line-height:1.8;
+      color:#d1d5db;
     }
 
-    .accreditations{
+    .footer-links h3,
+    .footer-contact h3{
+      margin-bottom:20px;
+      color:#00d4ff;
+    }
+
+    .footer-links a{
+      display:block;
+      color:#d1d5db;
+      text-decoration:none;
+      margin-bottom:12px;
+    }
+
+    .footer-links a:hover{
+      color:white;
+    }
+
+    .accreditation{
+      border-top:1px solid rgba(255,255,255,0.15);
+      margin-top:50px;
+      padding-top:30px;
+      text-align:center;
+    }
+
+    .logos{
       display:flex;
       justify-content:center;
+      align-items:center;
       gap:40px;
       flex-wrap:wrap;
-      margin-top:30px;
-      margin-bottom:30px;
+      margin-bottom:20px;
     }
 
-    .logo-box{
+    .logos img{
+      width:140px;
       background:white;
-      padding:18px 30px;
-      border-radius:18px;
-      color:#0077b6;
-      font-weight:700;
-      font-size:18px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
-      transition:0.4s;
-    }
-
-    .logo-box:hover{
-      transform:scale(1.08);
+      padding:10px;
+      border-radius:15px;
     }
 
     .copyright{
-      margin-top:20px;
-      font-size:14px;
-      color:#b9dfff;
+      color:#cbd5e1;
+      font-size:0.95rem;
     }
 
-    /* ANIMATIONS */
+    /* ANIMATION */
     @keyframes fadeUp{
       from{
         opacity:0;
@@ -328,225 +347,319 @@
       }
     }
 
-    @keyframes float{
-      0%{
-        transform:translateY(0px);
-      }
-      50%{
-        transform:translateY(-10px);
-      }
-      100%{
-        transform:translateY(0px);
-      }
-    }
-
     /* MOBILE */
-    @media(max-width:768px){
-
-      nav{
-        flex-direction:column;
-        gap:10px;
-      }
+    @media(max-width:900px){
 
       .hero h1{
-        font-size:38px;
+        font-size:2.7rem;
       }
 
-      .hero p{
-        font-size:17px;
+      .card{
+        grid-template-columns:1fr;
       }
 
-      .section-title h2{
-        font-size:32px;
+      .card img{
+        height:300px;
+      }
+
+      .footer-content{
+        grid-template-columns:1fr;
       }
 
       .cta h2{
-        font-size:34px;
+        font-size:2.2rem;
       }
-
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>Brightlife Healthcare Inc.</h2>
-
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
   <!-- HERO -->
   <section class="hero">
-
     <div class="hero-content">
-      <h1>Compassionate Healthcare You Can Trust</h1>
+      <h1>Brightlife Healthcare Inc.</h1>
 
       <p>
-        Brightlife Healthcare Inc. delivers quality medical services with modern facilities,
-        expert healthcare professionals, and patient-centered care for every family.
+        Compassionate, modern, and reliable healthcare services dedicated to improving lives.
+        From Hemodialysis and Emergency Care to Laboratory, X-Ray, and 24/7 Pharmacy services,
+        we are committed to delivering quality healthcare for every Filipino family.
       </p>
 
       <div class="hero-buttons">
-        <a href="https://www.facebook.com/BrightlifeHealthCareInc/" target="_blank" class="btn btn-primary">
-          Message Us Today
-        </a>
-
-        <a href="#services" class="btn btn-secondary">
-          Explore Services
-        </a>
+        <a href="#services" class="btn btn-primary">Explore Services</a>
+        <a href="https://www.facebook.com/BrightlifeHealthCareInc/" target="_blank" class="btn btn-secondary">Message Us Today</a>
       </div>
     </div>
-
   </section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
 
-    <div class="section-title">
-      <h2>Our Healthcare Services</h2>
-      <p>
-        Comprehensive and reliable healthcare services designed to provide comfort,
-        safety, and quality treatment for every patient.
-      </p>
+    <h2 class="section-title">Our Healthcare Services</h2>
+    <p class="section-subtitle">
+      Complete medical services with professional care and advanced facilities.
+    </p>
+
+    <div class="slider-container">
+
+      <button class="arrow prev">&#10094;</button>
+      <button class="arrow next">&#10095;</button>
+
+      <div class="slides">
+
+        <!-- HEMODIALYSIS -->
+        <div class="service-card">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=1200&auto=format&fit=crop" alt="Hemodialysis Center">
+
+            <div class="card-content">
+              <h3>Hemodialysis Center</h3>
+              <p>
+                Advanced dialysis treatment with patient-centered care, experienced healthcare professionals,
+                and modern equipment focused on safety, comfort, and recovery.
+              </p>
+
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY -->
+        <div class="service-card">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=1200&auto=format&fit=crop" alt="Emergency Care">
+
+            <div class="card-content">
+              <h3>Emergency Care Facility</h3>
+              <p>
+                Fast and reliable emergency medical care available for urgent health concerns with trained staff,
+                rapid response systems, and compassionate treatment.
+              </p>
+
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- OPD -->
+        <div class="service-card">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop" alt="Outpatient Department">
+
+            <div class="card-content">
+              <h3>Outpatient Department</h3>
+              <p>
+                Convenient outpatient consultations and healthcare services for routine checkups,
+                diagnostics, and medical management.
+              </p>
+
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB -->
+        <div class="service-card">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop" alt="Laboratory">
+
+            <div class="card-content">
+              <h3>Laboratory Department</h3>
+              <p>
+                Accurate laboratory testing and diagnostics using advanced technology to help doctors
+                provide precise and effective treatment.
+              </p>
+
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- XRAY -->
+        <div class="service-card">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1580281657527-47e2d28bce1f?q=80&w=1200&auto=format&fit=crop" alt="Xray">
+
+            <div class="card-content">
+              <h3>X-Ray Services</h3>
+              <p>
+                High-quality digital X-ray imaging services with fast results and reliable diagnostics
+                for better patient care.
+              </p>
+
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHARMACY -->
+        <div class="service-card">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=1200&auto=format&fit=crop" alt="24/7 Pharmacy">
+
+            <div class="card-content">
+              <h3>24/7 Pharmacy</h3>
+              <p>
+                Open day and night to provide accessible medicines, healthcare essentials,
+                and pharmacist assistance whenever patients need it.
+              </p>
+
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <div class="service-icon">💙</div>
-        <h3>Hemodialysis Center</h3>
-        <p>
-          Advanced dialysis care with comfortable facilities and experienced medical staff.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🚑</div>
-        <h3>Emergency Care Facility</h3>
-        <p>
-          Immediate medical attention and urgent healthcare support when every second matters.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🩺</div>
-        <h3>Outpatient Department</h3>
-        <p>
-          Accessible consultations, diagnostics, and treatment plans for all patients.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🧪</div>
-        <h3>Laboratory Department</h3>
-        <p>
-          Accurate and reliable laboratory testing using modern medical equipment.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🩻</div>
-        <h3>X-Ray Services</h3>
-        <p>
-          Fast and precise imaging services for effective diagnosis and patient care.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💊</div>
-        <h3>24/7 Pharmacy</h3>
-        <p>
-          Round-the-clock pharmacy services with essential medicines and healthcare supplies.
-        </p>
-      </div>
-
-    </div>
-
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
+  <!-- WHY US -->
+  <section class="why-us">
 
-    <div class="about-content">
+    <h2 class="section-title">Why Choose Brightlife?</h2>
 
-      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop" alt="Healthcare Team">
+    <div class="why-grid">
 
-      <div class="about-text">
-        <h3>Why Choose Brightlife Healthcare?</h3>
-
+      <div class="why-card">
+        <h4>Modern Healthcare</h4>
         <p>
-          At Brightlife Healthcare Inc., we combine compassionate healthcare,
-          advanced medical technology, and patient-focused services to ensure
-          every individual receives exceptional care.
+          Equipped with updated medical facilities and advanced healthcare technology.
         </p>
+      </div>
 
+      <div class="why-card">
+        <h4>Professional Team</h4>
         <p>
-          Our mission is to improve lives through accessible healthcare,
-          trusted medical expertise, and commitment to excellence in every service we provide.
+          Experienced doctors, nurses, and healthcare staff dedicated to patient care.
         </p>
+      </div>
 
-        <a href="https://www.facebook.com/BrightlifeHealthCareInc/" target="_blank" class="btn btn-primary">
-          Contact Our Team
-        </a>
+      <div class="why-card">
+        <h4>Patient-Centered Care</h4>
+        <p>
+          Compassionate and personalized healthcare services for every patient.
+        </p>
+      </div>
 
+      <div class="why-card">
+        <h4>Accessible Services</h4>
+        <p>
+          Complete healthcare solutions including dialysis, diagnostics, and pharmacy.
+        </p>
       </div>
 
     </div>
-
   </section>
 
   <!-- CTA -->
-  <div class="cta" id="contact">
+  <section class="cta">
 
     <h2>Your Health Is Our Priority</h2>
 
     <p>
-      Experience quality healthcare services with caring professionals and modern medical facilities.
-      Reach out to Brightlife Healthcare Inc. today.
+      Experience compassionate healthcare with Brightlife Healthcare Inc.
+      Contact us today and let our healthcare professionals provide the quality care you deserve.
     </p>
 
     <a href="https://www.facebook.com/BrightlifeHealthCareInc/" target="_blank" class="btn btn-primary">
-      Book Consultation
+      Contact Us on Facebook
     </a>
 
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
 
-    <div class="footer-logo">
-      Brightlife Healthcare Inc.
-    </div>
+    <div class="footer-content">
 
-    <div class="footer-text">
-      Trusted healthcare services with compassion, innovation, and excellence.
-    </div>
+      <div class="footer-logo">
+        <h2>Brightlife Healthcare Inc.</h2>
 
-    <!-- ACCREDITED LOGOS -->
-    <div class="accreditations">
-
-      <div class="logo-box">
-        ✔ DOH Accredited
+        <p>
+          Delivering trusted healthcare services with compassion, innovation,
+          and commitment to every Filipino family.
+        </p>
       </div>
 
-      <div class="logo-box">
-        ✔ PhilHealth Accredited
+      <div class="footer-links">
+        <h3>Services</h3>
+
+        <a href="#">Hemodialysis</a>
+        <a href="#">Emergency Care</a>
+        <a href="#">Outpatient Department</a>
+        <a href="#">Laboratory</a>
+        <a href="#">X-Ray</a>
+        <a href="#">24/7 Pharmacy</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+
+        <p>Brightlife Healthcare Inc.</p>
+        <p>Philippines</p>
+        <p>Open 24/7</p>
       </div>
 
     </div>
 
-    <div class="copyright">
-      © 2026 Brightlife Healthcare Inc. All Rights Reserved.
+    <!-- ACCREDITATION -->
+    <div class="accreditation">
+
+      <div class="logos">
+
+        <!-- DOH LOGO -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Department_of_Health_%28DOH%29.svg" alt="DOH Accredited">
+
+        <!-- PHILHEALTH LOGO -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/PhilHealth_Logo.svg" alt="PhilHealth Accredited">
+
+      </div>
+
+      <p class="copyright">
+        © 2026 Brightlife Healthcare Inc. | DOH Accredited | PhilHealth Accredited
+      </p>
+
     </div>
 
   </footer>
+
+  <!-- SLIDER SCRIPT -->
+  <script>
+    const slides = document.querySelector('.slides');
+    const slide = document.querySelectorAll('.service-card');
+
+    let index = 0;
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index++;
+      if(index >= slide.length){
+        index = 0;
+      }
+      updateSlide();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index--;
+      if(index < 0){
+        index = slide.length - 1;
+      }
+      updateSlide();
+    });
+
+    function updateSlide(){
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // AUTO SLIDE
+    setInterval(() => {
+      index++;
+      if(index >= slide.length){
+        index = 0;
+      }
+      updateSlide();
+    }, 5000);
+  </script>
 
 </body>
 </html>
